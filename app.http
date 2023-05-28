@@ -1,0 +1,49 @@
+POST http://localhost:3000/register/
+Content-Type: application/json
+
+{
+  "username": "adam_richard",
+  "password": "richard_567",
+  "name": "Adam Richard",
+  "gender": "male"
+}
+###
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{
+  "username":"JoeBiden",
+  "password":"biden@123"
+}
+###
+GET http://localhost:3000/user/tweets/feed/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY4NTIyMTk0Mn0.MEpSYnlcVfn_qMgeHckMWyA-ZTnHnA26cRrrcGR6LqY
+###
+GET http://localhost:3000/user/following/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY4NTIyMTk0Mn0.MEpSYnlcVfn_qMgeHckMWyA-ZTnHnA26cRrrcGR6LqY
+###
+GET http://localhost:3000/user/followers/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY4NTIyMTk0Mn0.MEpSYnlcVfn_qMgeHckMWyA-ZTnHnA26cRrrcGR6LqY
+###
+GET http://localhost:3000/tweets/8/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY4NTIyMTk0Mn0.MEpSYnlcVfn_qMgeHckMWyA-ZTnHnA26cRrrcGR6LqY
+###
+GET http://localhost:3000/tweets/8/likes/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY4NTIyMTk0Mn0.MEpSYnlcVfn_qMgeHckMWyA-ZTnHnA26cRrrcGR6LqY
+###
+GET http://localhost:3000/tweets/1/replies/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY4NTIyMTk0Mn0.MEpSYnlcVfn_qMgeHckMWyA-ZTnHnA26cRrrcGR6LqY
+###
+GET http://localhost:3000/user/tweets/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY4NTIyMTk0Mn0.MEpSYnlcVfn_qMgeHckMWyA-ZTnHnA26cRrrcGR6LqY
+###
+POST http://localhost:3000/user/tweets/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY4NTIyMTk0Mn0.MEpSYnlcVfn_qMgeHckMWyA-ZTnHnA26cRrrcGR6LqY
+Content-Type: application/json
+
+{
+   "tweet": "I wil destroy China"
+}
+###
+DELETE http://localhost:3000/tweets/13/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTY4NTIyMTk0Mn0.MEpSYnlcVfn_qMgeHckMWyA-ZTnHnA26cRrrcGR6LqY
