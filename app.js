@@ -3,7 +3,6 @@ const { open } = require("sqlite");
 const sqlite3 = require("sqlite3");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-const format = require("date-fns/format");
 const path = require("path");
 
 const app = express();
@@ -231,13 +230,19 @@ app.post("/user/tweets/", authenticateToken, async (request, response) => {
   const { tweet } = request.body;
   const { userId } = request;
   const date = new Date();
-  const formattedDate = format(date, "yyyy-MM-dd HH:mm:ss");
+  const formattedDate = `${date.getFullYear()}-${(
+    "0" +
+    (date.getMonth() + 1)
+  ).slice(
+    -2
+  )}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
   const addNewTweetQuery = `INSERT INTO tweet (tweet, user_id, date_time)
     VALUES ('${tweet}',${userId},'${formattedDate}');`;
   await db.run(addNewTweetQuery);
   response.send("Created a Tweet");
 });
 
+//Check the Tweet Created by the User
 const isUserTweet = async (request, response, next) => {
   const { tweetId } = request.params;
   const { userId } = request;
